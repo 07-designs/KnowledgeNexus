@@ -128,10 +128,11 @@ class VectorStore:
         
         collection = self.vector_db._collection
 
+        if not collection:
+            raise ValueError("No collection found in vector store")
 
         return {
             "count": collection.count(),
             "dimension": collection._embedding_function.get_model().dimension
         }
-    
-    
+ 
