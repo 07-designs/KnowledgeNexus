@@ -9,10 +9,10 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-     
 
     # env:
     #   OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+    
     steps:
     - name: Checkout code
       uses: actions/checkout@v3
@@ -36,3 +36,16 @@ jobs:
     - name: Run tests
       run: |
         pytest tests/ || echo "No tests found"
+
+    - name: Post Setup Python
+      run: |
+        echo "Python setup completed successfully"
+
+    - name: Post Checkout code
+      run: |
+        echo "Code checkout completed successfully"
+
+    - name: Complete job
+      run: |
+        echo "All CI steps completed successfully"
+        
