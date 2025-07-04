@@ -127,8 +127,11 @@ class VectorStore:
             raise ValueError("Vector store not initialized")
         
         collection = self.vector_db._collection
+
+
         return {
             "count": collection.count(),
             "dimension": collection._embedding_function.get_model().dimension
         }
+    
     
