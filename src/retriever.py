@@ -131,3 +131,4 @@ class VectorStore:
             "count": collection.count(),
             "dimension": collection._embedding_function.get_model().dimension
         }
+    
