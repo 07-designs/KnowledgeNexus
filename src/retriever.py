@@ -23,7 +23,9 @@ class VectorStore:
         self.persist_dir = persist_dir
         self.vector_db = None
 
-    def create_from_documents(self, documents: List[Document], persist: bool = True) -> None:
+    def create_from_documents(
+        self, documents: List[Document], persist: bool = True
+    ) -> None:
         """
         Create a vector store from a list of documents.
 
@@ -36,7 +38,7 @@ class VectorStore:
             self.vector_db = Chroma.from_documents(
                 documents=documents,
                 embedding=self.embedding_function,
-                persist_directory=self.persist_dir if persist else None
+                persist_directory=self.persist_dir if persist else None,
             )
 
             if persist:
@@ -61,7 +63,7 @@ class VectorStore:
         print(f"Loading vector store from {self.persist_dir}...")
         self.vector_db = Chroma(
             persist_directory=self.persist_dir,
-            embedding_function=self.embedding_function
+            embedding_function=self.embedding_function,
         )
         print("Vector store loaded successfully.")
         return True
@@ -82,7 +84,9 @@ class VectorStore:
 
         return self.vector_db.similarity_search(query, k=k)
 
-    def similarity_search_with_scores(self, query: str, k: int = 4) -> List[Tuple[Document, float]]:
+    def similarity_search_with_scores(
+        self, query: str, k: int = 4
+    ) -> List[Tuple[Document, float]]:
         """
         Perform a similarity search based on a query, returning scores.
 
@@ -134,6 +138,6 @@ class VectorStore:
 
         return {
             "count": collection.count(),
-            "dimension": collection._embedding_function.get_model().dimension
+            "dimension": collection._embedding_function.get_model().dimension,
         }
-        # Return collection statistics    
+        # Return collection statistics
