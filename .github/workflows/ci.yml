@@ -30,7 +30,7 @@ jobs:
       with:
         context: .
         push: true
-        tags: your-dockerhub-username/your-image-name:latest
+        tags: knowledgenexus/my-app:latest
 
     - name: Done
       run: echo "Docker image built and pushed successfully."
