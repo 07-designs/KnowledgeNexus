@@ -1,6 +1,6 @@
 # from typing import List, Dict, Any, Optional, Tuple
 # from langchain.docstore.document import Document
-from typing import  Dict, Any
+from typing import Dict, Any
 from src.document_loader import DocumentProcessor
 from src.embeddings import EmbeddingEngine
 from src.retriever import VectorStore
