@@ -1,8 +1,4 @@
-from typing import List, Dict, Any, Union
 from typing import List
-import torch
-from langchain_community.embeddings import HuggingFaceEmbeddings
-from langchain_openai import OpenAIEmbeddings
 
 
 class EmbeddingEngine:
@@ -60,7 +56,8 @@ class EmbeddingEngine:
                 )
             except ImportError:
                 raise ImportError(
-                    "langchain_huggingface package is required for Hugging Face models. Please install with: pip install langchain-huggingface"
+                    "langchain_huggingface package is required for Hugging Face "
+                    "models. Please install with: pip install langchain-huggingface"
                 )
 
     def embed_text(self, text: str) -> List[float]:

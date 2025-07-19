@@ -1,5 +1,4 @@
-import os
-from typing import List, Dict, Any, Optional
+from typing import List, Dict, Any
 from langchain.docstore.document import Document
 from langchain.prompts import PromptTemplate
 from langchain_openai import ChatOpenAI
