@@ -21,6 +21,10 @@ jobs:
       uses: actions/setup-python@v4
       with:
         python-version: 3.9
+    - name: Format code
+      run: |
+        pip install black
+        black src/ --line-length=120
 
     - name: Install dependencies
       run: |
