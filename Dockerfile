@@ -15,3 +15,5 @@ COPY . .
 
 # Default command to run your app (modify as needed)
 CMD ["python", "src/main.py"]
+
+#docker file is setup
